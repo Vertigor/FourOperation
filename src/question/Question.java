@@ -2,8 +2,8 @@ package question;
 
 import java.util.Random;
 import java.util.Scanner;
-import fraction.Fraction.Fractions;
-import fraction.caculate.Caculate;
+import fraction.Fractions;
+import calculate.Calculate;
 
 public class Question {
 	private String[] operators;
