@@ -37,7 +37,7 @@ public class Fractions {
         return m * n / maxCommonDivisor(m, n);  
     }  
     // 打印分数
-    public String getFraction()
+    public String printFraction()
     {
         return (this.numerator+"/"+this.denominator).toString();
     }
@@ -50,5 +50,18 @@ public class Fractions {
     public int getDenominator()
     {
         return this.denominator;
+    }
+    //判断是否可以转化为整数
+    private boolean isInteger(){
+    	if(this.denominator==1||this.denominator==-1)
+    		return true;
+    	else return false;
+    }
+    //转换为整数
+    public int changeToInteger(){
+    	if(this.isInteger())
+    		return this.getNumerator();
+    	else 
+    		return Integer.MAX_VALUE;
     }
 }
