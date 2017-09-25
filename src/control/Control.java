@@ -10,7 +10,6 @@ public class Control {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out.println(args.length+" "+args[0]+" "+args[1]);
 		System.out.println("本次共有"+args[1]+"道题。");
 		if(args[0].equals("-n")){
 			Scanner scanner=new Scanner(System.in);
@@ -22,7 +21,6 @@ public class Control {
             Question[] questions = new Question[num];
             for(int i=0;i<num;i++){
             	questions[i] = new Question(random.nextInt(10)+1);
-//            	questions[i] = new Question(9);
             	System.out.print((i+1)+":"+questions[i].getExpression());
             	answer[i] = scanner.nextLine();
             	Fractions result = questions[i].getResult();

@@ -72,7 +72,6 @@ public class Question {
             }
 		}
 		this.setExpression(printQuestion());
-		System.out.println(expression);
 		this.calculate();
 	}
 	private void initBracketArray(){
@@ -82,10 +81,6 @@ public class Question {
 		}
 	}
 	private boolean checkBracket(){
-//		for(int i=0;i<operators_num;i++){
-//			if(leftBracket[i]>1&&leftBracket[i]==rightBracket[i])
-//				return false;
-//		}
 		boolean flag = true;
 		int[] lb = leftBracket.clone();
 		int[] rb = rightBracket.clone();
