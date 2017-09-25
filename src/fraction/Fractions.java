@@ -13,6 +13,14 @@ public class Fractions {
     // 设置分子分母
     public void setValue(int numerator,int denominator)
     {
+    	if(numerator==0){
+    		this.numerator=0;
+    		this.denominator=1;
+    		return;
+    	}
+    	if(denominator==0){
+    		System.out.println("Error:denominator equals zero!");
+    	}
         int temp=maxCommonDivisor(denominator, numerator);  //temp为最大公约数
         this.numerator=numerator/temp;
         this.denominator=denominator/temp;
