@@ -25,6 +25,7 @@ public class Control {
             	answer[i] = scanner.nextLine();
             	Fractions result = questions[i].getResult();
             	int result_int = result.changeToInteger();
+            	if(!answer[i].equals("")){
             	if(result_int!=Integer.MAX_VALUE){
             		if(Integer.parseInt(answer[i])==result_int){
             			judge[i]=true;
@@ -45,9 +46,14 @@ public class Control {
             			System.out.println("不正确！正确答案："+result.printFraction());
             		}
             	}
+            	}else{
+            		judge[i]=false;
+        			System.out.println("未回答！正确答案："+result.printFraction());
+            	}
             }
             double score = (double)correct/(double)num*100.00;
             System.out.println("本次得分："+score);
+            scanner.close();
 		}else{
 			System.out.println("命令有误");
 		}

@@ -91,7 +91,7 @@ public class Question {
 					while(lb[j]>0&&rb[i]>0){
 						lb[j]--;
 						rb[i]--;
-						if(temp==j||(i==operators_num-1&&j==0)){
+						if(temp-1==j||temp==j||(i==operators_num-1&&j==0)){
 							deleteBracket(j, i);
 							flag = false;
 						}
@@ -144,9 +144,11 @@ public class Question {
 			}
 			if(i>0){
 				if(rb[i-1]>0){
+					char ope = priStack.pop();
+					if(ope=='(')
+						continue;
 					Fractions b = (Fractions) numStack.pop();// 第二个运算数
 					Fractions a = (Fractions) numStack.pop();// 第二个运算数
-					char ope = priStack.pop();
 					Fractions tempresult ;
 					switch (ope) {
 					// 如果是加号或者减号，则   
