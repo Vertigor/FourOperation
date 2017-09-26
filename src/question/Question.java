@@ -56,7 +56,7 @@ public class Question {
 			operands_fra[i]=new Fractions(operands[i],1);
 		}
 		for(int i=0;i<this.operators.length;i++){
-			switch(random.nextInt(4)){
+			switch(random.nextInt(5)){
             case 0:
                 operators[i]='+';
                 break;
@@ -68,6 +68,9 @@ public class Question {
                 break;
             case 3:
             	operators[i]='/';
+                break;
+            case 4:
+            	operators[i]='÷';
                 break;
             }
 		}
@@ -168,6 +171,10 @@ public class Question {
 			        	tempresult = Calculate.division(a, b);
 			        	numStack.push(tempresult);
 			        	break;
+			        case '÷':
+			        	tempresult = Calculate.division(a, b);
+			        	numStack.push(tempresult);
+			        	break;
 					}
 					rb[i-1]--;
 				}
@@ -192,6 +199,10 @@ public class Question {
 		        	numStack.push(tempresult);
 		        	break;
 		        case '/':
+		        	tempresult = Calculate.division(a, b);
+		        	numStack.push(tempresult);
+		        	break;
+		        case '÷':
 		        	tempresult = Calculate.division(a, b);
 		        	numStack.push(tempresult);
 		        	break;
@@ -224,6 +235,10 @@ public class Question {
 	        	numStack.push(tempresult);
 	        	break;
 	        case '/':
+	        	tempresult = Calculate.division(a, b);
+	        	numStack.push(tempresult);
+	        	break;
+	        case '÷':
 	        	tempresult = Calculate.division(a, b);
 	        	numStack.push(tempresult);
 	        	break;
@@ -263,7 +278,13 @@ public class Question {
 	        return true;   
 	      else  
 	        return false;   
-	    }   
+	    }
+	    case '÷': {   
+		      if (last == '+' || last == '-')   
+		        return true;   
+		      else  
+		        return false;   
+		    }   
 	      // '+-'为最低，一直返回false   
 	    case '+':   
 	      return false;   
